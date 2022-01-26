@@ -14,12 +14,14 @@ import { StorageService } from '../../services/storage.service';
 export class ProfilePage {
 
   cliente : ClienteDTO;
+  
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public storage: StorageService,
               public clienteService: ClienteService) {
   }
+  
 
   ionViewDidLoad() {
     let localUser = this.storage.getLocalUser();
@@ -33,14 +35,15 @@ export class ProfilePage {
       },
       error => {});
     } 
+  
    
   }
-  getImageIfExists() {
-    this.clienteService.getImageFromBucket(this.cliente.id)
-    .subscribe(response => {
-      this.cliente.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${this.cliente.id}.jpg`;
-    },
-    error => {});
-  }
+  getImageIfExists()  { this.clienteService.getImageFromBucket(this.cliente.id)
+    .subscribe(response => { 
+      this.cliente.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${this.cliente.id}.jpg`; }, 
+      
+      error => {}); }
+
+
 
 }
