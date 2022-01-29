@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { STORAGE_KEYS } from "../Confg/storage_keys.config";
+import { STORAGE_KEYS } from "../config/storage_keys.config";
 import { LocalUser } from "../models/local_user";
 
 @Injectable()
