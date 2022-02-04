@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { HttpClientModule} from '@angular/common/http'
+
 import { MyApp } from './app.component';
-
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,12 +16,9 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { ProdutoService } from '../services/domain/produto.service';
 import { CartService } from '../services/domain/cart.service';
 
-
 @NgModule({
   declarations: [
-    MyApp,
-   
-    
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -31,9 +27,7 @@ import { CartService } from '../services/domain/cart.service';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    
-    
+    MyApp
   ],
   providers: [
     StatusBar,
@@ -47,7 +41,6 @@ import { CartService } from '../services/domain/cart.service';
     ClienteService,
     ProdutoService,
     CartService
-    
   ]
 })
 export class AppModule {}
